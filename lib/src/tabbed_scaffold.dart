@@ -4,7 +4,6 @@ import 'package:meta/meta.dart';
 
 import 'package:copier/copier.dart';
 
-
 /// A representation of a tab to be used with [TabbedScaffold].
 ///
 /// Takes a title, as well as any number of optional properties that normally
@@ -55,7 +54,7 @@ class ScaffoldTab {
   final Widget title;
 
   // Typical Scaffold parameters
-  final PreferredSizeWidget appBar; // TODO: Expose all options
+  final PreferredSizeWidget appBar; // TODO: Expose convenient options
   final Widget body;
   final Widget floatingActionButton;
   final FloatingActionButtonLocation floatingActionButtonLocation;
@@ -72,7 +71,7 @@ class ScaffoldTab {
   final bool extendBody;
 
   // Custom
-  final BottomNavigationBarItem bottomNavigationBarItem; // TODO: Expose all options
+  final BottomNavigationBarItem bottomNavigationBarItem;
   final Widget bottomNavigationBarItemIcon;
   final Widget bottomNavigationBarItemTitle;
 }
@@ -371,6 +370,8 @@ class _TabbedScaffoldState extends State<TabbedScaffold> {
     );
   }
 
+  /// Default callback for pressing on tab - just switches visible tab.
+  // TODO: Support additional callback functions.
   void onTabPressed(int index) {
     setState(() {
       _currentIndex = index;

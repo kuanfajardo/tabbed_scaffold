@@ -352,7 +352,11 @@ class _TabbedScaffoldState extends State<TabbedScaffold> {
       extendBody: _currentTab.extendBody ?? this.extendBody,
 
       // Fine (Complex)
-      appBar: appBarCopier.copy(this.appBar).resolve(),
+      appBar: appBarCopier
+          .copy(this.appBar)
+          .copyWithAndResolve(
+            title: _currentTab.title,
+          ),
       bottomNavigationBar: bottomNavigationBarCopier
           .copy(this.bottomNavigationBar)
           .copy(_currentTab.bottomNavigationBar)

@@ -44,12 +44,13 @@ class ScaffoldTab {
     // Custom convenience properties
     this.bottomNavigationBarItemIcon,
     this.bottomNavigationBarItemTitle,
-  }) :
-        this.bottomNavigationBarItem = BottomNavigationBarItem( // TODO: Copier
+  }) : this.bottomNavigationBarItem = BottomNavigationBarItem(
+            // TODO: Copier
             icon: bottomNavigationBarItemIcon ?? bottomNavigationBarItem.icon,
-            title: bottomNavigationBarItemTitle ?? bottomNavigationBarItem != null ?
-            bottomNavigationBarItem.title : title
-        );
+            title:
+                bottomNavigationBarItemTitle ?? bottomNavigationBarItem != null
+                    ? bottomNavigationBarItem.title
+                    : title);
 
   final Widget title;
 
@@ -248,24 +249,22 @@ class TabbedScaffold extends StatefulWidget {
 
   @override
   _TabbedScaffoldState createState() => _TabbedScaffoldState(
-    tabs: this.tabs,
-    appBar: this.appBar,
-    floatingActionButton: this.floatingActionButton,
-    floatingActionButtonLocation: this
-        .floatingActionButtonLocation,
-    floatingActionButtonAnimator: this
-        .floatingActionButtonAnimator,
-    persistentFooterButtons: this.persistentFooterButtons,
-    drawer: this.drawer,
-    endDrawer: this.endDrawer,
-    backgroundColor: this.backgroundColor,
-    bottomNavigationBar: this.bottomNavigationBar,
-    bottomSheet: this.bottomSheet,
-    resizeToAvoidBottomInset: this.resizeToAvoidBottomInset,
-    primary: this.primary,
-    drawerDragStartBehavior: this.drawerDragStartBehavior,
-    extendBody: this.extendBody,
-  );
+        tabs: this.tabs,
+        appBar: this.appBar,
+        floatingActionButton: this.floatingActionButton,
+        floatingActionButtonLocation: this.floatingActionButtonLocation,
+        floatingActionButtonAnimator: this.floatingActionButtonAnimator,
+        persistentFooterButtons: this.persistentFooterButtons,
+        drawer: this.drawer,
+        endDrawer: this.endDrawer,
+        backgroundColor: this.backgroundColor,
+        bottomNavigationBar: this.bottomNavigationBar,
+        bottomSheet: this.bottomSheet,
+        resizeToAvoidBottomInset: this.resizeToAvoidBottomInset,
+        primary: this.primary,
+        drawerDragStartBehavior: this.drawerDragStartBehavior,
+        extendBody: this.extendBody,
+      );
 }
 
 class _TabbedScaffoldState extends State<TabbedScaffold> {
@@ -335,21 +334,21 @@ class _TabbedScaffoldState extends State<TabbedScaffold> {
       body: _currentTab.body,
 
       // Coarse (Simple)
-      floatingActionButtonLocation: _currentTab.floatingActionButtonLocation
-          ?? this.floatingActionButtonLocation,
-      floatingActionButtonAnimator: _currentTab.floatingActionButtonAnimator
-          ?? this.floatingActionButtonAnimator,
-      persistentFooterButtons: _currentTab.persistentFooterButtons ??
-          this.persistentFooterButtons,
+      floatingActionButtonLocation: _currentTab.floatingActionButtonLocation ??
+          this.floatingActionButtonLocation,
+      floatingActionButtonAnimator: _currentTab.floatingActionButtonAnimator ??
+          this.floatingActionButtonAnimator,
+      persistentFooterButtons:
+          _currentTab.persistentFooterButtons ?? this.persistentFooterButtons,
       bottomSheet: _currentTab.bottomSheet ?? this.bottomSheet,
       backgroundColor: _currentTab.backgroundColor ?? this.backgroundColor,
-      resizeToAvoidBottomInset: _currentTab.resizeToAvoidBottomInset ??
-          this.resizeToAvoidBottomInset,
+      resizeToAvoidBottomInset:
+          _currentTab.resizeToAvoidBottomInset ?? this.resizeToAvoidBottomInset,
       primary: _currentTab.primary ?? this.primary,
       drawer: _currentTab.drawer ?? this.drawer,
       endDrawer: _currentTab.endDrawer ?? this.endDrawer,
-      drawerDragStartBehavior: _currentTab.drawerDragStartBehavior ??
-          this.drawerDragStartBehavior,
+      drawerDragStartBehavior:
+          _currentTab.drawerDragStartBehavior ?? this.drawerDragStartBehavior,
       extendBody: _currentTab.extendBody ?? this.extendBody,
 
       // Fine (Complex)
@@ -358,10 +357,10 @@ class _TabbedScaffoldState extends State<TabbedScaffold> {
           .copy(this.bottomNavigationBar)
           .copy(_currentTab.bottomNavigationBar)
           .copyWithAndResolve(
-        items: this.tabs.map((tab) => tab.bottomNavigationBarItem).toList(),
-        currentIndex: _currentIndex,
-        onTap: this.onTabPressed,
-      ),
+            items: this.tabs.map((tab) => tab.bottomNavigationBarItem).toList(),
+            currentIndex: _currentIndex,
+            onTap: this.onTabPressed,
+          ),
       // floatingActionButtonCopier
       //     .copy(this.floatingActionButton)
       //     .copy(_currentTab.floatingActionButton)

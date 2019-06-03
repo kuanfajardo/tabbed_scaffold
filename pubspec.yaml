@@ -1,9 +1,7 @@
 name: tabbed_scaffold
-description: A `Scaffold`-like widget tailored for tab-bar navigation. When creating a [Scaffold]
-  that uses a [BottomNavigationBar], it's not uncommon to end up with lengthy, unreadable code;
-  this package provides a `TabbedScaffold` widget that aims to reduce the complexity of creating
-  a tab-bar navigation.
-version: 0.0.2
+description: A `Scaffold`-like widget that aims to reduce the code required and complexity of
+  creating tab-bar navigation.
+version: 0.0.2+1
 author: Juan Diego Fajardo <jfajardo200@gmail.com>
 homepage: https://github.com/kuanfajardo/tabbed_scaffold.git
 

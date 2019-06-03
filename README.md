@@ -4,7 +4,7 @@ A `Scaffold`-like widget tailored for tab-bar navigation.
 
 ## Installation
 
-See [instructions]() on how to install.
+See [instructions](https://pub.dev/packages/tabbed_scaffold#-installing-tab-) on how to install.
 
 ## Usage
 

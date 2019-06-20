@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
-import 'package:copier/copier.dart';
+import 'package:copyable/copyable.dart';
 
 /// A representation of a tab to be used with [TabbedScaffold].
 ///
@@ -353,14 +353,15 @@ class _TabbedScaffoldState extends State<TabbedScaffold> {
 
       // Fine (Complex)
       appBar: appBarCopier
-          .copy(this.appBar)
-          .copyWithAndResolve(
+          .chainCopy(this.appBar)
+          .chainCopy(_currentTab.appBar)
+          .copyWith(
             title: _currentTab.title,
           ),
       bottomNavigationBar: bottomNavigationBarCopier
-          .copy(this.bottomNavigationBar)
-          .copy(_currentTab.bottomNavigationBar)
-          .copyWithAndResolve(
+          .chainCopy(this.bottomNavigationBar)
+          .chainCopy(_currentTab.bottomNavigationBar)
+          .copyWith(
             items: this.tabs.map((tab) => tab.bottomNavigationBarItem).toList(),
             currentIndex: _currentIndex,
             onTap: this.onTabPressed,
